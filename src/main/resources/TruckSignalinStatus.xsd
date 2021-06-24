@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xsd:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+    <xs:element name="tms_msg">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="trans_id" type="xs:string" />
+                <xs:element name="veh_fleet_code" />
+                <xs:element name="veh_radio_code" type="xs:unsignedByte" />
+                <xs:element name="protocol_version" type="xs:unsignedByte" />
+                <xs:element name="packet_code" />
+                <xs:element name="transaction">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="trans_date_time" type="xs:string" />
+                            <xs:element name="date_time_offset" type="xs:unsignedByte" />
+                            <xs:element name="tkt_code" type="xs:unsignedInt" />
+                            <xs:element name="tkt_date_time" type="xs:string" />
+                            <xs:element name="order_code" type="xs:unsignedShort" />
+                            <xs:element name="truck_code" type="xs:unsignedByte" />
+                            <xs:element name="employee_code" type="xs:unsignedShort" />
+                            <xs:element name="message">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="time_offset" />
+                                        <xs:element name="type" />
+                                        <xs:element name="value" type="xs:unsignedByte" />
+                                        <xs:element name="value_uom" type="xs:string" />
+                                        <xs:element name="gps">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="utc_date_time" type="xs:dateTime" />
+                                                    <xs:element name="utctime" type="xs:unsignedInt" />
+                                                    <xs:element name="latitude" type="xs:decimal" />
+                                                    <xs:element name="latitude_hemi" type="xs:string" />
+                                                    <xs:element name="longitude" type="xs:decimal" />
+                                                    <xs:element name="longitude_hemi" type="xs:string" />
+                                                    <xs:element name="satellites" />
+                                                    <xs:element name="speed" type="xs:decimal" />
+                                                    <xs:element name="heading" type="xs:unsignedByte" />
+                                                    <xs:element name="antenna" />
+                                                </xs:sequence>
+                                                <xs:attribute name="version" type="xs:decimal" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="sitename" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="trans_cat" type="xs:string" />
+                            <xs:element name="trans_type" type="xs:string" />
+                            <xs:element name="trans_sub_type" type="xs:string" />
+                            <xs:element name="trans_origin" type="xs:string" />
+                            <xs:element name="trans_origin_ipaddr" type="xs:string" />
+                            <xs:element name="trans_origin_machname" type="xs:string" />
+                            <xs:element name="trans_origin_username" type="xs:string" />
+                            <xs:element name="time_to_live" type="xs:unsignedByte" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xsd:schema>

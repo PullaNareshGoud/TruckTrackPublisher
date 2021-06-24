@@ -1,5 +1,7 @@
 package com.hlc.TruckTrackPublisher.controller;
 
+import com.hlc.TruckTrackPublisher.domain.model.TmsMsg;
+import com.hlc.TruckTrackPublisher.util.MarshallerUtil;
 import ionic.Msmq.Message;
 import ionic.Msmq.MessageQueueException;
 import ionic.Msmq.Queue;
@@ -9,9 +11,14 @@ import org.json.XML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.xml.sax.SAXException;
 
+import javax.xml.bind.JAXBException;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.util.UUID;
 
 @RestController
@@ -19,6 +26,8 @@ import java.util.UUID;
 
 public class PublishController {
 
+    @Autowired
+    MarshallerUtil marshallerUtil;
     @Autowired
     Queue queue;
     @PostMapping("/publish")
@@ -46,7 +55,23 @@ public class PublishController {
         log.info("Message sent to queue!!");
     }
 
-    @ExceptionHandler
+    @PostMapping(value = "/publish-truck-signal-status", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void publishTruckSignalingStatus(@RequestBody TmsMsg payload) throws MessageQueueException, UnsupportedEncodingException, JAXBException, MalformedURLException, SAXException {
+
+        log.info("Converting json to xml.....");
+        JSONObject json = new JSONObject(payload);
+        String xmlAfterMrshal = marshallerUtil.convertPoJoToXml(payload);
+        String xml = XML.toString(json);
+        log.info(" xml data after conversion ....."+ xmlAfterMrshal);
+        log.info("Sending xml .....");
+
+//        Message msg= new Message(xml, "inserted by TruckTrackPublisher", UUID.randomUUID().toString());
+
+//        queue.send(msg);
+        log.info("Message sent to queue!!");
+    }
+
+//    @ExceptionHandler
     public ResponseEntity exception(Exception e){
         return ResponseEntity.badRequest().body(e.getMessage());
     }
