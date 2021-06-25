@@ -59,6 +59,7 @@ public class PublishController {
     public void publishTruckSignalingStatus(@RequestBody TmsMsg payload) throws MessageQueueException, UnsupportedEncodingException, JAXBException, MalformedURLException, SAXException {
 
         log.info("Converting json to xml.....");
+        log.info("Given Json: {}", payload);
         JSONObject json = new JSONObject(payload);
         String xmlAfterMrshal = marshallerUtil.convertPoJoToXml(payload);
         String xml = XML.toString(json);
