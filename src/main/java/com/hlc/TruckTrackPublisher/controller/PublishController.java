@@ -1,5 +1,7 @@
 package com.hlc.TruckTrackPublisher.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hlc.TruckTrackPublisher.domain.model.TmsMsg;
 import com.hlc.TruckTrackPublisher.util.MarshallerUtil;
 import ionic.Msmq.Message;
@@ -56,20 +58,19 @@ public class PublishController {
     }
 
     @PostMapping(value = "/publish-truck-signal-status", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void publishTruckSignalingStatus(@RequestBody TmsMsg payload) throws MessageQueueException, UnsupportedEncodingException, JAXBException, MalformedURLException, SAXException {
-
+    public void publishTruckSignalingStatus(@RequestBody TmsMsg payload) throws MessageQueueException, UnsupportedEncodingException, JAXBException, MalformedURLException, SAXException, JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
         log.info("Converting json to xml.....");
-        log.info("Given Json: {}", payload);
-        JSONObject json = new JSONObject(payload);
+        log.info("Given Json: {}", mapper.writeValueAsString(payload));
         String xmlAfterMrshal = marshallerUtil.convertPoJoToXml(payload);
-        String xml = XML.toString(json);
         log.info(" xml data after conversion ....."+ xmlAfterMrshal);
-        log.info("Sending xml .....");
+
+//        log.info("Sending xml .....");
 
 //        Message msg= new Message(xml, "inserted by TruckTrackPublisher", UUID.randomUUID().toString());
 
 //        queue.send(msg);
-        log.info("Message sent to queue!!");
+//        log.info("Message sent to queue!!");
     }
 
 //    @ExceptionHandler

@@ -17,16 +17,20 @@ import java.net.MalformedURLException;
 public class MarshallerUtil {
     public static String convertPoJoToXml(TmsMsg tmsMsg) throws JAXBException, SAXException, MalformedURLException {
 
-    JAXBContext contextObj = JAXBContext.newInstance(TmsMsg.class);
+        JAXBContext contextObj = JAXBContext.newInstance(TmsMsg.class);
 
-    Marshaller marshallerObj = contextObj.createMarshaller();
-    marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
+        Marshaller marshallerObj = contextObj.createMarshaller();
+        marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 //        SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 //        Schema schema = schemaFactory.newSchema(new URL("http://www.w3.org/2001/XMLSchema"));
 
         StringWriter sw = new StringWriter();
-        marshallerObj.marshal(tmsMsg, sw );
-        System.out.println(sw.toString());
-        return sw.toString();
+        marshallerObj.marshal(tmsMsg, sw);
+
+        return updateXmlTag(sw.toString());
+    }
+
+    private static String updateXmlTag(String tmsMsg) {
+        return tmsMsg.replace("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>", "<?xml version=\"1.0\"?>");
     }
 }

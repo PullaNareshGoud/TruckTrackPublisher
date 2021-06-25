@@ -3,22 +3,12 @@
   "veh_fleet_code": null,
   "veh_radio_code": "52",
   "protocol_version": "2",
-  "packet_code": null,
   "transaction": {
-    "trans_date_time": "2021/06/08T12:49:56",
-    "date_time_offset": "1",
-    "tkt_code": "86685299",
-    "tkt_date_time": "2021/06/08T11:41:12",
-    "order_code": "1627",
-    "truck_code": "52",
-    "employee_code": "60829",
+    "date_time_offset": 0,
+    "employee_code": 0,
     "message": {
-      "time_offset": null,
-      "type": null,
-      "value": "38",
-      "value_uom": "GALLON",
       "gps": {
-        "@version": "1.0",
+        "antenna": null,
         "utc_date_time": "2021-06-08T18:48:42",
         "utctime": "184842",
         "latitude": "3858.4738",
@@ -28,10 +18,17 @@
         "satellites": null,
         "speed": "000.0",
         "heading": "000",
-        "antenna": null
+        "version": 1.0
       },
-      "sitename": "9750 Winding Bend, Peyton, Peyton"
+      "sitename": "9750 Winding Bend, Peyton, Peyton",
+      "time_offset": null,
+      "type": null,
+      "value": 0,
+      "value_uom": "GALLON"
     },
+    "order_code": 0,
+    "tkt_code": 0,
+    "tkt_date_time": "2021/06/08T11:41:12",
     "trans_cat": "XIN",
     "trans_type": "WAT",
     "trans_sub_type": "POU",
@@ -39,6 +36,7 @@
     "trans_origin_ipaddr": "fe80::f4ff:c8b6:92:768b%20",
     "trans_origin_machname": "AI-DND1-SCFLP08",
     "trans_origin_username": "SYSTEM",
-    "time_to_live": "0"
+    "time_to_live": "0",
+    "truck_code": 0
   }
 }

@@ -110,6 +110,11 @@ import java.math.BigDecimal;
 })
 @XmlRootElement(name = "tms_msg")
 public class TmsMsg {
+    //Attributes
+    @XmlAttribute(name = "xmlns:xsd", required = true)
+    protected String xsd="http://www.w3.org/2001/XMLSchema";
+    @XmlAttribute(name = "xmlns:xsi", required = true)
+    protected String xsi="http://www.w3.org/2001/XMLSchema-instance";
 
     @XmlElement(name = "trans_id", required = true)
     @JsonProperty("trans_id")
@@ -994,7 +999,7 @@ public class TmsMsg {
 
                 @XmlElement(name = "utc_date_time", required = true)
                 @XmlSchemaType(name = "dateTime")
-                protected XMLGregorianCalendar utcDateTime;
+                protected String utcDateTime;
                 @XmlSchemaType(name = "unsignedInt")
                 protected long utctime;
                 @XmlElement(required = true)
@@ -1024,7 +1029,7 @@ public class TmsMsg {
                  *     {@link XMLGregorianCalendar }
                  *     
                  */
-                public XMLGregorianCalendar getUtcDateTime() {
+                public String getUtcDateTime() {
                     return utcDateTime;
                 }
 
@@ -1036,7 +1041,7 @@ public class TmsMsg {
                  *     {@link XMLGregorianCalendar }
                  *     
                  */
-                public void setUtcDateTime(XMLGregorianCalendar value) {
+                public void setUtcDateTime(String value) {
                     this.utcDateTime = value;
                 }
 
