@@ -9,6 +9,8 @@
 package com.hlc.TruckTrackPublisher.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.eclipse.persistence.oxm.annotations.XmlMarshalNullRepresentation;
+import org.eclipse.persistence.oxm.annotations.XmlNullPolicy;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -109,6 +111,7 @@ import java.math.BigDecimal;
     "transaction"
 })
 @XmlRootElement(name = "tms_msg")
+@XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
 public class TmsMsg {
     //Attributes
     @XmlAttribute(name = "xmlns:xsd", required = true)
@@ -116,24 +119,31 @@ public class TmsMsg {
     @XmlAttribute(name = "xmlns:xsi", required = true)
     protected String xsi="http://www.w3.org/2001/XMLSchema-instance";
 
-    @XmlElement(name = "trans_id", required = true)
+    @XmlElement(name = "trans_id", required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
+
     @JsonProperty("trans_id")
     protected String transId;
-    @XmlElement(name = "veh_fleet_code", required = true)
+    @XmlElement(name = "veh_fleet_code", required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     @JsonProperty("veh_fleet_code")
     protected Object vehFleetCode;
-    @XmlElement(name = "veh_radio_code")
+    @XmlElement(name = "veh_radio_code", nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     @XmlSchemaType(name = "unsignedByte")
     @JsonProperty("veh_radio_code")
     protected short vehRadioCode;
-    @XmlElement(name = "protocol_version")
+    @XmlElement(name = "protocol_version", nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     @XmlSchemaType(name = "unsignedByte")
     @JsonProperty("protocol_version")
     protected short protocolVersion;
-    @XmlElement(name = "packet_code", required = true)
+    @XmlElement(name = "packet_code", required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     @JsonProperty("packet_code")
     protected Object packetCode;
-    @XmlElement(required = true)
+    @XmlElement(required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     protected TmsMsg.Transaction transaction;
 
     /**
@@ -355,56 +365,72 @@ public class TmsMsg {
     })
     public static class Transaction {
 
-        @XmlElement(name = "trans_date_time", required = true)
+        @XmlElement(name = "trans_date_time", required = true, nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @JsonProperty("trans_date_time")
         protected String transDateTime;
-        @XmlElement(name = "date_time_offset")
+        @XmlElement(name = "date_time_offset", nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedByte")
         @JsonProperty("date_time_offset")
         protected short dateTimeOffset;
-        @XmlElement(name = "tkt_code")
+        @XmlElement(name = "tkt_code", nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedInt")
         @JsonProperty("tkt_code")
         protected long tktCode;
-        @XmlElement(name = "tkt_date_time", required = true)
+        @XmlElement(name = "tkt_date_time", required = true, nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @JsonProperty("tkt_date_time")
         protected String tktDateTime;
-        @XmlElement(name = "order_code")
+        @XmlElement(name = "order_code", nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedShort")
         @JsonProperty("order_code")
         protected int orderCode;
-        @XmlElement(name = "truck_code")
+        @XmlElement(name = "truck_code", nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedByte")
         @JsonProperty("truck_code")
         protected short truckCode;
-        @XmlElement(name = "employee_code")
+        @XmlElement(name = "employee_code", nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedShort")
         @JsonProperty("employee_code")
         protected int employeeCode;
-        @XmlElement(required = true)
+        @XmlElement(required = true, nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         protected TmsMsg.Transaction.Message message;
-        @XmlElement(name = "trans_cat", required = true)
+        @XmlElement(name = "trans_cat", required = true, nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @JsonProperty("trans_cat")
         protected String transCat;
-        @XmlElement(name = "trans_type", required = true)
+        @XmlElement(name = "trans_type", required = true, nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @JsonProperty("trans_type")
         protected String transType;
-        @XmlElement(name = "trans_sub_type", required = true)
+        @XmlElement(name = "trans_sub_type", required = true, nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @JsonProperty("trans_sub_type")
         protected String transSubType;
-        @XmlElement(name = "trans_origin", required = true)
+        @XmlElement(name = "trans_origin", required = true, nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @JsonProperty("trans_origin")
         protected String transOrigin;
-        @XmlElement(name = "trans_origin_ipaddr", required = true)
+        @XmlElement(name = "trans_origin_ipaddr", required = true, nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @JsonProperty("trans_origin_ipaddr")
         protected String transOriginIpaddr;
-        @XmlElement(name = "trans_origin_machname", required = true)
+        @XmlElement(name = "trans_origin_machname", required = true, nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @JsonProperty("trans_origin_machname")
         protected String transOriginMachname;
-        @XmlElement(name = "trans_origin_username", required = true)
+        @XmlElement(name = "trans_origin_username", required = true, nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @JsonProperty("trans_origin_username")
         protected String transOriginUsername;
-        @XmlElement(name = "time_to_live")
+        @XmlElement(name = "time_to_live", nillable = true)
+        @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedByte")
         @JsonProperty("time_to_live")
         protected short timeToLive;
@@ -801,19 +827,24 @@ public class TmsMsg {
         })
         public static class Message {
 
-            @XmlElement(name = "time_offset", required = true)
+            @XmlElement(name = "time_offset", required = true, nillable = true)
+            @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
             @JsonProperty("time_offset")
             protected Object timeOffset;
-            @XmlElement(required = true)
+            @XmlElement(required = true, nillable = true)
+            @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
             protected Object type;
             @XmlSchemaType(name = "unsignedByte")
             protected short value;
-            @XmlElement(name = "value_uom", required = true)
+            @XmlElement(name = "value_uom", required = true, nillable = true)
+            @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
             @JsonProperty("value_uom")
             protected String valueUom;
-            @XmlElement(required = true)
+            @XmlElement(required = true, nillable = true)
+            @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
             protected TmsMsg.Transaction.Message.Gps gps;
-            @XmlElement(required = true)
+            @XmlElement(required = true, nillable = true)
+            @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
             protected String sitename;
 
             /**
@@ -997,26 +1028,34 @@ public class TmsMsg {
             })
             public static class Gps {
 
-                @XmlElement(name = "utc_date_time", required = true)
+                @XmlElement(name = "utc_date_time", required = true, nillable = true)
+                @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 @XmlSchemaType(name = "dateTime")
                 protected String utcDateTime;
                 @XmlSchemaType(name = "unsignedInt")
                 protected long utctime;
-                @XmlElement(required = true)
+                @XmlElement(required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected BigDecimal latitude;
-                @XmlElement(name = "latitude_hemi", required = true)
+                @XmlElement(name = "latitude_hemi", required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected String latitudeHemi;
-                @XmlElement(required = true)
+                @XmlElement(required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected BigDecimal longitude;
-                @XmlElement(name = "longitude_hemi", required = true)
+                @XmlElement(name = "longitude_hemi", required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected String longitudeHemi;
-                @XmlElement(required = true)
+                @XmlElement(required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected Object satellites;
-                @XmlElement(required = true)
+                @XmlElement(required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected BigDecimal speed;
                 @XmlSchemaType(name = "unsignedByte")
                 protected short heading;
-                @XmlElement(required = true)
+                @XmlElement(required = true, nillable = true)
+    @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected Object antenna;
                 @XmlAttribute(name = "version", required = true)
                 protected BigDecimal version;

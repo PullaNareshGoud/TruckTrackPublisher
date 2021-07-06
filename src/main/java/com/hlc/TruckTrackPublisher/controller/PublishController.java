@@ -3,7 +3,7 @@ package com.hlc.TruckTrackPublisher.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hlc.TruckTrackPublisher.domain.model.TmsMsg;
-import com.hlc.TruckTrackPublisher.util.MarshallerUtil;
+import com.hlc.TruckTrackPublisher.util.MarshallerHelper;
 import ionic.Msmq.Message;
 import ionic.Msmq.MessageQueueException;
 import ionic.Msmq.Queue;
@@ -29,7 +29,7 @@ import java.util.UUID;
 public class PublishController {
 
     @Autowired
-    MarshallerUtil marshallerUtil;
+    MarshallerHelper marshallerHelper;
     @Autowired
     Queue queue;
     @PostMapping("/publish")
@@ -62,7 +62,7 @@ public class PublishController {
         ObjectMapper mapper = new ObjectMapper();
         log.info("Converting json to xml.....");
         log.info("Given Json: {}", mapper.writeValueAsString(payload));
-        String xmlAfterMrshal = marshallerUtil.convertPoJoToXml(payload);
+        String xmlAfterMrshal = marshallerHelper.convertPoJoToXml(payload);
         log.info(" xml data after conversion ....."+ xmlAfterMrshal);
 
 //        log.info("Sending xml .....");
