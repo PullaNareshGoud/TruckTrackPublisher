@@ -65,16 +65,16 @@ public class PublishController {
         String xmlAfterMrshal = marshallerHelper.convertPoJoToXml(payload);
         log.info(" xml data after conversion ....."+ xmlAfterMrshal);
 
-//        log.info("Sending xml .....");
+        log.info("Sending xml .....");
 
-//        Message msg= new Message(xml, "inserted by TruckTrackPublisher", UUID.randomUUID().toString());
+        Message msg= new Message(xmlAfterMrshal, "inserted by TruckTrackPublisher", UUID.randomUUID().toString());
 
-//        queue.send(msg);
-//        log.info("Message sent to queue!!");
+        queue.send(msg);
+        log.info("Message sent to queue!!");
     }
 
 //    @ExceptionHandler
-    public ResponseEntity exception(Exception e){
+    public ResponseEntity<String> exception(Exception e){
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 }
