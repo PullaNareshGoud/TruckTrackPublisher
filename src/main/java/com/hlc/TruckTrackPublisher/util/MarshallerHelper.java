@@ -24,11 +24,23 @@ public class MarshallerHelper {
 //        SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 //        Schema schema = schemaFactory.newSchema(new URL("http://www.w3.org/2001/XMLSchema"));
 
-
+        getDefaultValues(tmsMsg);
         StringWriter sw = new StringWriter();
         marshallerObj.marshal(tmsMsg, sw);
 
         return updateXmlTag(sw.toString());
+    }
+
+    private static void getDefaultValues(TmsMsg tmsMsg) {
+        tmsMsg.setTransId("9bdea1c1-7090-49e0-bce5-6955ca826db4");
+        tmsMsg.setProtocolVersion((short) 2);
+        tmsMsg.getTransaction().setDateTimeOffset((short) 0);
+        tmsMsg.getTransaction().setTransCat("SIN");
+        tmsMsg.getTransaction().setTransType("STA");
+        tmsMsg.getTransaction().setTransOrigin("VSC");
+        tmsMsg.getTransaction().setTransOriginUsername("SYSTEM");
+        tmsMsg.getTransaction().setTimeToLive((short) 0);
+
     }
 
     private static String updateXmlTag(String tmsMsg) {
