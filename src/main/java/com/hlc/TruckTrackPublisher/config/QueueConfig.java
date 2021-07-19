@@ -24,7 +24,7 @@ public class QueueConfig {
             //nName of Queue to open
             String qname= environment.getProperty("truck.queue", "test");
             //Name of Queue Server (ENTER for local)
-            String hostname= environment.getProperty("truck.queue", "");
+            String hostname= environment.getProperty("truck.host", "");
             String fullname= getQueueFullName(hostname,qname);
             System.out.println("open (" + fullname + ")");
             queue= new Queue(fullname);
