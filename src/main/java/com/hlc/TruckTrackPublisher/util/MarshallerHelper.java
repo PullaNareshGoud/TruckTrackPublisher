@@ -33,13 +33,13 @@ public class MarshallerHelper {
 
     private static void getDefaultValues(TmsMsg tmsMsg) {
         tmsMsg.setTransId("9bdea1c1-7090-49e0-bce5-6955ca826db4");
-        tmsMsg.setProtocolVersion((short) 2);
-        tmsMsg.getTransaction().setDateTimeOffset((short) 0);
+        tmsMsg.setProtocolVersion((int) 2);
+        tmsMsg.getTransaction().setDateTimeOffset((int) 0);
         tmsMsg.getTransaction().setTransCat("SIN");
         tmsMsg.getTransaction().setTransType("STA");
         tmsMsg.getTransaction().setTransOrigin("VSC");
         tmsMsg.getTransaction().setTransOriginUsername("SYSTEM");
-        tmsMsg.getTransaction().setTimeToLive((short) 0);
+        tmsMsg.getTransaction().setTimeToLive((int) 0);
 
     }
 

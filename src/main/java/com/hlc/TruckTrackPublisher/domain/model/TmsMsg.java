@@ -41,9 +41,9 @@ import java.math.BigDecimal;
  *                   &lt;element name="date_time_offset" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/&gt;
  *                   &lt;element name="tkt_code" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
  *                   &lt;element name="tkt_date_time" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                   &lt;element name="order_code" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/&gt;
+ *                   &lt;element name="order_code" type="{http://www.w3.org/2001/XMLSchema}unsignedint"/&gt;
  *                   &lt;element name="truck_code" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/&gt;
- *                   &lt;element name="employee_code" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/&gt;
+ *                   &lt;element name="employee_code" type="{http://www.w3.org/2001/XMLSchema}unsignedint"/&gt;
  *                   &lt;element name="message"&gt;
  *                     &lt;complexType&gt;
  *                       &lt;complexContent&gt;
@@ -132,12 +132,12 @@ public class TmsMsg {
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     @XmlSchemaType(name = "unsignedByte")
     @JsonProperty("veh_radio_code")
-    protected short vehRadioCode;
+    protected int vehRadioCode;
     @XmlElement(name = "protocol_version", nillable = true)
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     @XmlSchemaType(name = "unsignedByte")
     @JsonProperty("protocol_version")
-    protected short protocolVersion;
+    protected int protocolVersion;
     @XmlElement(name = "packet_code", required = true, nillable = true)
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     @JsonProperty("packet_code")
@@ -198,7 +198,7 @@ public class TmsMsg {
      * Gets the value of the vehRadioCode property.
      * 
      */
-    public short getVehRadioCode() {
+    public int getVehRadioCode() {
         return vehRadioCode;
     }
 
@@ -206,7 +206,7 @@ public class TmsMsg {
      * Sets the value of the vehRadioCode property.
      * 
      */
-    public void setVehRadioCode(short value) {
+    public void setVehRadioCode(int value) {
         this.vehRadioCode = value;
     }
 
@@ -214,7 +214,7 @@ public class TmsMsg {
      * Gets the value of the protocolVersion property.
      * 
      */
-    public short getProtocolVersion() {
+    public int getProtocolVersion() {
         return protocolVersion;
     }
 
@@ -222,7 +222,7 @@ public class TmsMsg {
      * Sets the value of the protocolVersion property.
      * 
      */
-    public void setProtocolVersion(short value) {
+    public void setProtocolVersion(int value) {
         this.protocolVersion = value;
     }
 
@@ -289,9 +289,9 @@ public class TmsMsg {
      *         &lt;element name="date_time_offset" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/&gt;
      *         &lt;element name="tkt_code" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
      *         &lt;element name="tkt_date_time" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *         &lt;element name="order_code" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/&gt;
+     *         &lt;element name="order_code" type="{http://www.w3.org/2001/XMLSchema}unsignedint"/&gt;
      *         &lt;element name="truck_code" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/&gt;
-     *         &lt;element name="employee_code" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/&gt;
+     *         &lt;element name="employee_code" type="{http://www.w3.org/2001/XMLSchema}unsignedint"/&gt;
      *         &lt;element name="message"&gt;
      *           &lt;complexType&gt;
      *             &lt;complexContent&gt;
@@ -373,7 +373,7 @@ public class TmsMsg {
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedByte")
         @JsonProperty("date_time_offset")
-        protected short dateTimeOffset;
+        protected int dateTimeOffset;
         @XmlElement(name = "tkt_code", nillable = true)
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedInt")
@@ -385,17 +385,17 @@ public class TmsMsg {
         protected String tktDateTime;
         @XmlElement(name = "order_code", nillable = true)
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
-        @XmlSchemaType(name = "unsignedShort")
+        @XmlSchemaType(name = "unsignedint")
         @JsonProperty("order_code")
         protected int orderCode;
         @XmlElement(name = "truck_code", nillable = true)
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedByte")
         @JsonProperty("truck_code")
-        protected short truckCode;
+        protected int truckCode;
         @XmlElement(name = "employee_code", nillable = true)
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
-        @XmlSchemaType(name = "unsignedShort")
+        @XmlSchemaType(name = "unsignedint")
         @JsonProperty("employee_code")
         protected int employeeCode;
         @XmlElement(required = true, nillable = true)
@@ -433,7 +433,7 @@ public class TmsMsg {
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedByte")
         @JsonProperty("time_to_live")
-        protected short timeToLive;
+        protected int timeToLive;
 
         /**
          * Gets the value of the transDateTime property.
@@ -463,7 +463,7 @@ public class TmsMsg {
          * Gets the value of the dateTimeOffset property.
          * 
          */
-        public short getDateTimeOffset() {
+        public int getDateTimeOffset() {
             return dateTimeOffset;
         }
 
@@ -471,7 +471,7 @@ public class TmsMsg {
          * Sets the value of the dateTimeOffset property.
          * 
          */
-        public void setDateTimeOffset(short value) {
+        public void setDateTimeOffset(int value) {
             this.dateTimeOffset = value;
         }
 
@@ -535,7 +535,7 @@ public class TmsMsg {
          * Gets the value of the truckCode property.
          * 
          */
-        public short getTruckCode() {
+        public int getTruckCode() {
             return truckCode;
         }
 
@@ -543,7 +543,7 @@ public class TmsMsg {
          * Sets the value of the truckCode property.
          * 
          */
-        public void setTruckCode(short value) {
+        public void setTruckCode(int value) {
             this.truckCode = value;
         }
 
@@ -759,7 +759,7 @@ public class TmsMsg {
          * Gets the value of the timeToLive property.
          * 
          */
-        public short getTimeToLive() {
+        public int getTimeToLive() {
             return timeToLive;
         }
 
@@ -767,7 +767,7 @@ public class TmsMsg {
          * Sets the value of the timeToLive property.
          * 
          */
-        public void setTimeToLive(short value) {
+        public void setTimeToLive(int value) {
             this.timeToLive = value;
         }
 
@@ -835,7 +835,7 @@ public class TmsMsg {
             @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
             protected Object type;
             @XmlSchemaType(name = "unsignedByte")
-            protected short value;
+            protected int value;
             @XmlElement(name = "value_uom", required = true, nillable = true)
             @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
             @JsonProperty("value_uom")
@@ -899,7 +899,7 @@ public class TmsMsg {
              * Gets the value of the value property.
              * 
              */
-            public short getValue() {
+            public int getValue() {
                 return value;
             }
 
@@ -907,7 +907,7 @@ public class TmsMsg {
              * Sets the value of the value property.
              * 
              */
-            public void setValue(short value) {
+            public void setValue(int value) {
                 this.value = value;
             }
 
@@ -1053,7 +1053,7 @@ public class TmsMsg {
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected BigDecimal speed;
                 @XmlSchemaType(name = "unsignedByte")
-                protected short heading;
+                protected int heading;
                 @XmlElement(required = true, nillable = true)
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected Object antenna;
@@ -1248,7 +1248,7 @@ public class TmsMsg {
                  * Gets the value of the heading property.
                  * 
                  */
-                public short getHeading() {
+                public int getHeading() {
                     return heading;
                 }
 
@@ -1256,7 +1256,7 @@ public class TmsMsg {
                  * Sets the value of the heading property.
                  * 
                  */
-                public void setHeading(short value) {
+                public void setHeading(int value) {
                     this.heading = value;
                 }
 
