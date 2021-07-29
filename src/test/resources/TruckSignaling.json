@@ -5,21 +5,21 @@
   "protocol_version": "2",
   "transaction": {
     "date_time_offset": 0,
-    "employee_code": 0,
+    "employee_code": null,
     "message": {
-      "gps": {
-        "antenna": null,
-        "utc_date_time": "2021-06-08T18:48:42",
-        "utctime": "184842",
-        "latitude": "3858.4738",
-        "latitude_hemi": "N",
-        "longitude": "10434.9045",
-        "longitude_hemi": "W",
-        "satellites": null,
-        "speed": "000.0",
-        "heading": "000",
-        "version": 1.0
-      },
+
+      "antenna": null,
+      "utc_date_time": "2021-06-08T18:48:42",
+      "utctime": "184842",
+      "latitude": "3858.4738",
+      "latitude_hemi": "N",
+      "longitude": "10434.9045",
+      "longitude_hemi": "W",
+      "satellites": null,
+      "speed": "000.0",
+      "heading": "000",
+      "version": 1.0,
+
       "sitename": "9750 Winding Bend, Peyton, Peyton",
       "time_offset": null,
       "type": null,

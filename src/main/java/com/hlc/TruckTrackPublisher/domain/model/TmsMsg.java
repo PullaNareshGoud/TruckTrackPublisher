@@ -39,11 +39,11 @@ import java.math.BigDecimal;
  *                 &lt;sequence&gt;
  *                   &lt;element name="trans_date_time" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *                   &lt;element name="date_time_offset" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/&gt;
- *                   &lt;element name="tkt_code" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+ *                   &lt;element name="tkt_code" type="{http://www.w3.org/2001/XMLSchema}unsignedInteger"/&gt;
  *                   &lt;element name="tkt_date_time" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                   &lt;element name="order_code" type="{http://www.w3.org/2001/XMLSchema}unsignedint"/&gt;
+ *                   &lt;element name="order_code" type="{http://www.w3.org/2001/XMLSchema}unsignedInteger"/&gt;
  *                   &lt;element name="truck_code" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/&gt;
- *                   &lt;element name="employee_code" type="{http://www.w3.org/2001/XMLSchema}unsignedint"/&gt;
+ *                   &lt;element name="employee_code" type="{http://www.w3.org/2001/XMLSchema}unsignedInteger"/&gt;
  *                   &lt;element name="message"&gt;
  *                     &lt;complexType&gt;
  *                       &lt;complexContent&gt;
@@ -59,7 +59,7 @@ import java.math.BigDecimal;
  *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *                                     &lt;sequence&gt;
  *                                       &lt;element name="utc_date_time" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
- *                                       &lt;element name="utctime" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+ *                                       &lt;element name="utctime" type="{http://www.w3.org/2001/XMLSchema}unsignedInteger"/&gt;
  *                                       &lt;element name="latitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
  *                                       &lt;element name="latitude_hemi" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *                                       &lt;element name="longitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
@@ -132,12 +132,12 @@ public class TmsMsg {
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     @XmlSchemaType(name = "unsignedByte")
     @JsonProperty("veh_radio_code")
-    protected int vehRadioCode;
+    protected Integer vehRadioCode;
     @XmlElement(name = "protocol_version", nillable = true)
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     @XmlSchemaType(name = "unsignedByte")
     @JsonProperty("protocol_version")
-    protected int protocolVersion;
+    protected Integer protocolVersion;
     @XmlElement(name = "packet_code", required = true, nillable = true)
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
     @JsonProperty("packet_code")
@@ -198,7 +198,7 @@ public class TmsMsg {
      * Gets the value of the vehRadioCode property.
      * 
      */
-    public int getVehRadioCode() {
+    public Integer getVehRadioCode() {
         return vehRadioCode;
     }
 
@@ -206,7 +206,7 @@ public class TmsMsg {
      * Sets the value of the vehRadioCode property.
      * 
      */
-    public void setVehRadioCode(int value) {
+    public void setVehRadioCode(Integer value) {
         this.vehRadioCode = value;
     }
 
@@ -214,7 +214,7 @@ public class TmsMsg {
      * Gets the value of the protocolVersion property.
      * 
      */
-    public int getProtocolVersion() {
+    public Integer getProtocolVersion() {
         return protocolVersion;
     }
 
@@ -222,7 +222,7 @@ public class TmsMsg {
      * Sets the value of the protocolVersion property.
      * 
      */
-    public void setProtocolVersion(int value) {
+    public void setProtocolVersion(Integer value) {
         this.protocolVersion = value;
     }
 
@@ -287,11 +287,11 @@ public class TmsMsg {
      *       &lt;sequence&gt;
      *         &lt;element name="trans_date_time" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
      *         &lt;element name="date_time_offset" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/&gt;
-     *         &lt;element name="tkt_code" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+     *         &lt;element name="tkt_code" type="{http://www.w3.org/2001/XMLSchema}unsignedInteger"/&gt;
      *         &lt;element name="tkt_date_time" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *         &lt;element name="order_code" type="{http://www.w3.org/2001/XMLSchema}unsignedint"/&gt;
+     *         &lt;element name="order_code" type="{http://www.w3.org/2001/XMLSchema}unsignedInteger"/&gt;
      *         &lt;element name="truck_code" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/&gt;
-     *         &lt;element name="employee_code" type="{http://www.w3.org/2001/XMLSchema}unsignedint"/&gt;
+     *         &lt;element name="employee_code" type="{http://www.w3.org/2001/XMLSchema}unsignedInteger"/&gt;
      *         &lt;element name="message"&gt;
      *           &lt;complexType&gt;
      *             &lt;complexContent&gt;
@@ -307,7 +307,7 @@ public class TmsMsg {
      *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
      *                           &lt;sequence&gt;
      *                             &lt;element name="utc_date_time" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
-     *                             &lt;element name="utctime" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+     *                             &lt;element name="utctime" type="{http://www.w3.org/2001/XMLSchema}unsignedInteger"/&gt;
      *                             &lt;element name="latitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
      *                             &lt;element name="latitude_hemi" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
      *                             &lt;element name="longitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
@@ -373,10 +373,10 @@ public class TmsMsg {
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedByte")
         @JsonProperty("date_time_offset")
-        protected int dateTimeOffset;
+        protected Integer dateTimeOffset;
         @XmlElement(name = "tkt_code", nillable = true)
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
-        @XmlSchemaType(name = "unsignedInt")
+        @XmlSchemaType(name = "unsignedInteger")
         @JsonProperty("tkt_code")
         protected long tktCode;
         @XmlElement(name = "tkt_date_time", required = true, nillable = true)
@@ -385,20 +385,20 @@ public class TmsMsg {
         protected String tktDateTime;
         @XmlElement(name = "order_code", nillable = true)
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
-        @XmlSchemaType(name = "unsignedint")
+        @XmlSchemaType(name = "unsignedInteger")
         @JsonProperty("order_code")
-        protected int orderCode;
+        protected Integer orderCode;
         @XmlElement(name = "truck_code", nillable = true)
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedByte")
         @JsonProperty("truck_code")
-        protected int truckCode;
+        protected Integer truckCode;
         @XmlElement(name = "employee_code", nillable = true)
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
-        @XmlSchemaType(name = "unsignedint")
+        @XmlSchemaType(name = "unsignedInteger")
         @JsonProperty("employee_code")
-        protected int employeeCode;
-        @XmlElement(required = true, nillable = true)
+        protected Integer employeeCode;
+        @XmlElement(name = "message_string", required = true, nillable = true)
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         protected TmsMsg.Transaction.Message message;
         @XmlElement(name = "trans_cat", required = true, nillable = true)
@@ -433,7 +433,7 @@ public class TmsMsg {
         @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
         @XmlSchemaType(name = "unsignedByte")
         @JsonProperty("time_to_live")
-        protected int timeToLive;
+        protected Integer timeToLive;
 
         /**
          * Gets the value of the transDateTime property.
@@ -463,7 +463,7 @@ public class TmsMsg {
          * Gets the value of the dateTimeOffset property.
          * 
          */
-        public int getDateTimeOffset() {
+        public Integer getDateTimeOffset() {
             return dateTimeOffset;
         }
 
@@ -471,7 +471,7 @@ public class TmsMsg {
          * Sets the value of the dateTimeOffset property.
          * 
          */
-        public void setDateTimeOffset(int value) {
+        public void setDateTimeOffset(Integer value) {
             this.dateTimeOffset = value;
         }
 
@@ -519,7 +519,7 @@ public class TmsMsg {
          * Gets the value of the orderCode property.
          * 
          */
-        public int getOrderCode() {
+        public Integer getOrderCode() {
             return orderCode;
         }
 
@@ -527,7 +527,7 @@ public class TmsMsg {
          * Sets the value of the orderCode property.
          * 
          */
-        public void setOrderCode(int value) {
+        public void setOrderCode(Integer value) {
             this.orderCode = value;
         }
 
@@ -535,7 +535,7 @@ public class TmsMsg {
          * Gets the value of the truckCode property.
          * 
          */
-        public int getTruckCode() {
+        public Integer getTruckCode() {
             return truckCode;
         }
 
@@ -543,7 +543,7 @@ public class TmsMsg {
          * Sets the value of the truckCode property.
          * 
          */
-        public void setTruckCode(int value) {
+        public void setTruckCode(Integer value) {
             this.truckCode = value;
         }
 
@@ -551,7 +551,7 @@ public class TmsMsg {
          * Gets the value of the employeeCode property.
          * 
          */
-        public int getEmployeeCode() {
+        public Integer getEmployeeCode() {
             return employeeCode;
         }
 
@@ -559,7 +559,7 @@ public class TmsMsg {
          * Sets the value of the employeeCode property.
          * 
          */
-        public void setEmployeeCode(int value) {
+        public void setEmployeeCode(Integer value) {
             this.employeeCode = value;
         }
 
@@ -759,7 +759,7 @@ public class TmsMsg {
          * Gets the value of the timeToLive property.
          * 
          */
-        public int getTimeToLive() {
+        public Integer getTimeToLive() {
             return timeToLive;
         }
 
@@ -767,7 +767,7 @@ public class TmsMsg {
          * Sets the value of the timeToLive property.
          * 
          */
-        public void setTimeToLive(int value) {
+        public void setTimeToLive(Integer value) {
             this.timeToLive = value;
         }
 
@@ -792,7 +792,7 @@ public class TmsMsg {
          *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
          *                 &lt;sequence&gt;
          *                   &lt;element name="utc_date_time" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
-         *                   &lt;element name="utctime" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+         *                   &lt;element name="utctime" type="{http://www.w3.org/2001/XMLSchema}unsignedInteger"/&gt;
          *                   &lt;element name="latitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
          *                   &lt;element name="latitude_hemi" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
          *                   &lt;element name="longitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
@@ -818,145 +818,221 @@ public class TmsMsg {
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
-            "timeOffset",
-            "type",
-            "value",
-            "valueUom",
-            "gps",
-            "sitename"
+                "utcDateTime",
+                "utctime",
+                "latitude",
+                "latitudeHemi",
+                "longitude",
+                "longitudeHemi",
+                "speed",
+                "heading",
+                "sitename"
         })
         public static class Message {
 
-            @XmlElement(name = "time_offset", required = true, nillable = true)
-            @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
-            @JsonProperty("time_offset")
-            protected Object timeOffset;
-            @XmlElement(required = true, nillable = true)
-            @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
-            protected Object type;
-            @XmlSchemaType(name = "unsignedByte")
-            protected int value;
-            @XmlElement(name = "value_uom", required = true, nillable = true)
-            @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
-            @JsonProperty("value_uom")
-            protected String valueUom;
-            @XmlElement(required = true, nillable = true)
-            @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
-            protected TmsMsg.Transaction.Message.Gps gps;
             @XmlElement(required = true, nillable = true)
             @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
             protected String sitename;
 
-            /**
-             * Gets the value of the timeOffset property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Object }
-             *     
-             */
-            public Object getTimeOffset() {
-                return timeOffset;
+
+                @XmlElement(name = "utc_date_time", required = true, nillable = true)
+                @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
+                @XmlSchemaType(name = "dateTime")
+                protected String utcDateTime;
+                @XmlSchemaType(name = "unsignedInteger")
+                protected long utctime;
+                @XmlElement(required = true, nillable = true)
+                @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
+                protected BigDecimal latitude;
+                @XmlElement(name = "latitude_hemi", required = true, nillable = true)
+                @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
+                protected String latitudeHemi;
+                @XmlElement(required = true, nillable = true)
+                @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
+                protected BigDecimal longitude;
+                @XmlElement(name = "longitude_hemi", required = true, nillable = true)
+                @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
+                protected String longitudeHemi;
+                @XmlElement(required = true, nillable = true)
+                @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
+                protected BigDecimal speed;
+                @XmlSchemaType(name = "unsignedByte")
+                protected Integer heading;
+
+                /**
+                 * Gets the value of the utcDateTime property.
+                 *
+                 * @return
+                 *     possible object is
+                 *     {@link XMLGregorianCalendar }
+                 *
+                 */
+                public String getUtcDateTime() {
+                return utcDateTime;
             }
 
-            /**
-             * Sets the value of the timeOffset property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Object }
-             *     
-             */
-            public void setTimeOffset(Object value) {
-                this.timeOffset = value;
+                /**
+                 * Sets the value of the utcDateTime property.
+                 *
+                 * @param value
+                 *     allowed object is
+                 *     {@link XMLGregorianCalendar }
+                 *
+                 */
+                public void setUtcDateTime(String value) {
+                this.utcDateTime = value;
             }
 
-            /**
-             * Gets the value of the type property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Object }
-             *     
-             */
-            public Object getType() {
-                return type;
+                /**
+                 * Gets the value of the utctime property.
+                 *
+                 */
+                public long getUtctime() {
+                return utctime;
             }
 
-            /**
-             * Sets the value of the type property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Object }
-             *     
-             */
-            public void setType(Object value) {
-                this.type = value;
+                /**
+                 * Sets the value of the utctime property.
+                 *
+                 */
+                public void setUtctime(long value) {
+                this.utctime = value;
             }
 
-            /**
-             * Gets the value of the value property.
-             * 
-             */
-            public int getValue() {
-                return value;
+                /**
+                 * Gets the value of the latitude property.
+                 *
+                 * @return
+                 *     possible object is
+                 *     {@link BigDecimal }
+                 *
+                 */
+                public BigDecimal getLatitude() {
+                return latitude;
             }
 
-            /**
-             * Sets the value of the value property.
-             * 
-             */
-            public void setValue(int value) {
-                this.value = value;
+                /**
+                 * Sets the value of the latitude property.
+                 *
+                 * @param value
+                 *     allowed object is
+                 *     {@link BigDecimal }
+                 *
+                 */
+                public void setLatitude(BigDecimal value) {
+                this.latitude = value;
             }
 
-            /**
-             * Gets the value of the valueUom property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getValueUom() {
-                return valueUom;
+                /**
+                 * Gets the value of the latitudeHemi property.
+                 *
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *
+                 */
+                public String getLatitudeHemi() {
+                return latitudeHemi;
             }
 
-            /**
-             * Sets the value of the valueUom property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setValueUom(String value) {
-                this.valueUom = value;
+                /**
+                 * Sets the value of the latitudeHemi property.
+                 *
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *
+                 */
+                public void setLatitudeHemi(String value) {
+                this.latitudeHemi = value;
             }
 
-            /**
-             * Gets the value of the gps property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link TmsMsg.Transaction.Message.Gps }
-             *     
-             */
-            public TmsMsg.Transaction.Message.Gps getGps() {
-                return gps;
+                /**
+                 * Gets the value of the longitude property.
+                 *
+                 * @return
+                 *     possible object is
+                 *     {@link BigDecimal }
+                 *
+                 */
+                public BigDecimal getLongitude() {
+                return longitude;
             }
 
-            /**
-             * Sets the value of the gps property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link TmsMsg.Transaction.Message.Gps }
-             *     
-             */
-            public void setGps(TmsMsg.Transaction.Message.Gps value) {
-                this.gps = value;
+                /**
+                 * Sets the value of the longitude property.
+                 *
+                 * @param value
+                 *     allowed object is
+                 *     {@link BigDecimal }
+                 *
+                 */
+                public void setLongitude(BigDecimal value) {
+                this.longitude = value;
+            }
+
+                /**
+                 * Gets the value of the longitudeHemi property.
+                 *
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *
+                 */
+                public String getLongitudeHemi() {
+                return longitudeHemi;
+            }
+
+                /**
+                 * Sets the value of the longitudeHemi property.
+                 *
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *
+                 */
+                public void setLongitudeHemi(String value) {
+                this.longitudeHemi = value;
+            }
+
+                /**
+                 * Gets the value of the speed property.
+                 *
+                 * @return
+                 *     possible object is
+                 *     {@link BigDecimal }
+                 *
+                 */
+                public BigDecimal getSpeed() {
+                return speed;
+            }
+
+                /**
+                 * Sets the value of the speed property.
+                 *
+                 * @param value
+                 *     allowed object is
+                 *     {@link BigDecimal }
+                 *
+                 */
+                public void setSpeed(BigDecimal value) {
+                this.speed = value;
+            }
+
+                /**
+                 * Gets the value of the heading property.
+                 *
+                 */
+                public Integer getHeading() {
+                return heading;
+            }
+
+                /**
+                 * Sets the value of the heading property.
+                 *
+                 */
+                public void setHeading(Integer value) {
+                this.heading = value;
             }
 
             /**
@@ -995,7 +1071,7 @@ public class TmsMsg {
              *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
              *       &lt;sequence&gt;
              *         &lt;element name="utc_date_time" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
-             *         &lt;element name="utctime" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+             *         &lt;element name="utctime" type="{http://www.w3.org/2001/XMLSchema}unsignedInteger"/&gt;
              *         &lt;element name="latitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
              *         &lt;element name="latitude_hemi" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
              *         &lt;element name="longitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
@@ -1032,7 +1108,7 @@ public class TmsMsg {
                 @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 @XmlSchemaType(name = "dateTime")
                 protected String utcDateTime;
-                @XmlSchemaType(name = "unsignedInt")
+                @XmlSchemaType(name = "unsignedInteger")
                 protected long utctime;
                 @XmlElement(required = true, nillable = true)
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
@@ -1053,7 +1129,7 @@ public class TmsMsg {
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected BigDecimal speed;
                 @XmlSchemaType(name = "unsignedByte")
-                protected int heading;
+                protected Integer heading;
                 @XmlElement(required = true, nillable = true)
     @XmlNullPolicy(emptyNodeRepresentsNull = true, nullRepresentationForXml = XmlMarshalNullRepresentation.EMPTY_NODE)
                 protected Object antenna;
@@ -1248,7 +1324,7 @@ public class TmsMsg {
                  * Gets the value of the heading property.
                  * 
                  */
-                public int getHeading() {
+                public Integer getHeading() {
                     return heading;
                 }
 
@@ -1256,7 +1332,7 @@ public class TmsMsg {
                  * Sets the value of the heading property.
                  * 
                  */
-                public void setHeading(int value) {
+                public void setHeading(Integer value) {
                     this.heading = value;
                 }
 
