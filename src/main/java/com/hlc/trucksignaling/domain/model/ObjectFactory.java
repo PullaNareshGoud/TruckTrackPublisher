@@ -6,7 +6,7 @@
 //
 
 
-package com.hlc.TruckTrackPublisher.domain.model;
+package com.hlc.trucksignaling.domain.model;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

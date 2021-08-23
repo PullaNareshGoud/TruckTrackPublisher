@@ -1,6 +1,6 @@
-package com.hlc.TruckTrackPublisher.util;
+package com.hlc.trucksignaling.util;
 
-import com.hlc.TruckTrackPublisher.domain.model.TmsMsg;
+import com.hlc.trucksignaling.domain.model.TmsMsg;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;

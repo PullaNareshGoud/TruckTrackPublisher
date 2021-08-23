@@ -1,4 +1,4 @@
-package com.hlc.TruckTrackPublisher.config;
+package com.hlc.trucksignaling.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

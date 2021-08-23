@@ -1,4 +1,4 @@
-package com.hlc.TruckTrackPublisher;
+package com.hlc.trucksignaling;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

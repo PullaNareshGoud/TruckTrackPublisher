@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hlc</groupId>
-    <artifactId>TruckTrackPublisher</artifactId>
+    <artifactId>TruckSignaling</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>TruckTrackPublisher</name>
+    <name>TruckSignaling</name>
     <description>Truck tracking publisher</description>
     <properties>
         <java.version>8</java.version>

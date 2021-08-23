@@ -1,4 +1,4 @@
-package com.hlc.TruckTrackPublisher;
+package com.hlc.trucksignaling;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

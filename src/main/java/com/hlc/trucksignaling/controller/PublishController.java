@@ -1,15 +1,13 @@
-package com.hlc.TruckTrackPublisher.controller;
+package com.hlc.trucksignaling.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hlc.TruckTrackPublisher.domain.model.TmsMsg;
-import com.hlc.TruckTrackPublisher.util.MarshallerHelper;
+import com.hlc.trucksignaling.domain.model.TmsMsg;
+import com.hlc.trucksignaling.util.MarshallerHelper;
 import ionic.Msmq.Message;
 import ionic.Msmq.MessageQueueException;
 import ionic.Msmq.Queue;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONObject;
-import org.json.XML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -25,56 +23,32 @@ import java.util.UUID;
 
 @RestController
 @Slf4j
-
 public class PublishController {
 
     @Autowired
     MarshallerHelper marshallerHelper;
     @Autowired
     Queue queue;
-    @PostMapping("/publish")
-    public void publish(@RequestBody String payload) throws MessageQueueException, UnsupportedEncodingException {
-        log.info("Sending.....");
-
-        Message msg= new Message(payload, "inserted by TruckTrackPublisher", UUID.randomUUID().toString());
-
-        queue.send(msg);
-        log.info("Message sent to queue!!");
-    }
-
-    @PostMapping(value = "/publish-json", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void publishJson(@RequestBody String payload) throws MessageQueueException, UnsupportedEncodingException {
-
-        log.info("Converting json to xml.....");
-        JSONObject json = new JSONObject(payload);
-        String xml = XML.toString(json);
-        log.info(" xml data after conversion ....."+ xml);
-        log.info("Sending xml .....");
-
-        Message msg= new Message(xml, "inserted by TruckTrackPublisher", UUID.randomUUID().toString());
-
-        queue.send(msg);
-        log.info("Message sent to queue!!");
-    }
 
     @PostMapping(value = "/publish-truck-signal-status", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void publishTruckSignalingStatus(@RequestBody TmsMsg payload) throws MessageQueueException, UnsupportedEncodingException, JAXBException, MalformedURLException, SAXException, JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         log.info("Converting json to xml.....");
         log.info("Given Json: {}", mapper.writeValueAsString(payload));
-        String xmlAfterMrshal = marshallerHelper.convertPoJoToXml(payload);
-        log.info(" xml data after conversion ....."+ xmlAfterMrshal);
+        //Convert pojo to XML
+        String xmlAfterMarshal = marshallerHelper.convertPoJoToXml(payload);
+        log.info(" xml data after conversion ..... {}", xmlAfterMarshal);
 
         log.info("Sending xml .....");
 
-        Message msg= new Message(xmlAfterMrshal, "inserted by TruckTrackPublisher", UUID.randomUUID().toString());
-
+        Message msg = new Message(xmlAfterMarshal, "inserted by TruckTrackPublisher", UUID.randomUUID().toString());
+// Send message to queue
         queue.send(msg);
         log.info("Message sent to queue!!");
     }
 
-//    @ExceptionHandler
-    public ResponseEntity<String> exception(Exception e){
+    //    @ExceptionHandler
+    public ResponseEntity<String> exception(Exception e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 }

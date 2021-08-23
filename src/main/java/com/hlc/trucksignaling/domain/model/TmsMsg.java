@@ -6,7 +6,7 @@
 //
 
 
-package com.hlc.TruckTrackPublisher.domain.model;
+package com.hlc.trucksignaling.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.eclipse.persistence.oxm.annotations.XmlMarshalNullRepresentation;

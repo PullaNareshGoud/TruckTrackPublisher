@@ -1,4 +1,4 @@
-package com.hlc.TruckTrackPublisher.domain;
+package com.hlc.trucksignaling.domain;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.hlc.TruckTrackPublisher.config;
+package com.hlc.trucksignaling.config;
 
 import ionic.Msmq.MessageQueueException;
 import ionic.Msmq.Queue;
